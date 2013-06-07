@@ -15,14 +15,21 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :start_plan %><br />
-    <%= f.text_field :start_plan %>
+  <%= f.label :start_plan %>
+  <div class="input-append date" id="dp3" date-date-format="dd-mm-yyyy">
+    <%= f.text_field :start_plan, data: {behaviour: 'datepicker'} %>
+    <span class="add-on"><i class="icon-th"></i></span>
   </div>
-  <div class="field">
-    <%= f.label :end_plan %><br />
-    <%= f.text_field :end_plan %>
+  <%= f.label :end_plan %>
+  <div class="input-append date" id="dp4" date-date-format="dd-mm-yyyy">
+    <%= f.text_field :end_plan, data: {behaviour: 'datepicker'} %>
+    <span class="add-on"><i class="icon-th"></i></span>
   </div>
+  <script type="text/javascript">
+    $('[data-behaviour~=datepicker]').datepicker();
+    $('#dp3').datepicker();
+    $('#dp4').datepicker();
+  </script>
   <div class="actions">
     <%= f.submit %>
   </div>
