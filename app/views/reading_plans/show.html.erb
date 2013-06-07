@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @reading_plan.title %>
+</p>
+
+<p>
+  <b>Start plan:</b>
+  <%= @reading_plan.start_plan %>
+</p>
+
+<p>
+  <b>End plan:</b>
+  <%= @reading_plan.end_plan %>
+</p>
+
+
+<%= link_to 'Edit', edit_reading_plan_path(@reading_plan) %> |
+<%= link_to 'Back', reading_plans_path %>

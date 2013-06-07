@@ -1,7 +1,5 @@
 require 'spec_helper'
 
 describe ReadingPlan do
-	it "creates a reading plan" do
-		ReadingPlan.new(title: 'test plan').valid?.should be_true
-	end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

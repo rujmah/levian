@@ -1,0 +1,27 @@
+<h1>Listing reading_plans</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Start plan</th>
+    <th>End plan</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reading_plans.each do |reading_plan| %>
+  <tr>
+    <td><%= reading_plan.title %></td>
+    <td><%= reading_plan.start_plan %></td>
+    <td><%= reading_plan.end_plan %></td>
+    <td><%= link_to 'Show', reading_plan %></td>
+    <td><%= link_to 'Edit', edit_reading_plan_path(reading_plan) %></td>
+    <td><%= link_to 'Destroy', reading_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reading plan', new_reading_plan_path %>
