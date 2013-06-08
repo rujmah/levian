@@ -41,7 +41,6 @@ class ReadingPlansController < ApplicationController
   # POST /reading_plans.json
   def create
     @reading_plan = ReadingPlan.new(params[:reading_plan])
-
     respond_to do |format|
       if @reading_plan.save
         format.html { redirect_to @reading_plan, notice: 'Reading plan was successfully created.' }
@@ -80,4 +79,5 @@ class ReadingPlansController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
