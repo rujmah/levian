@@ -1,23 +1,24 @@
-<h1>Listing reading_plans</h1>
+<h1>Reading Plans</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Start plan</th>
     <th>End plan</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @reading_plans.each do |reading_plan| %>
   <tr>
     <td><%= reading_plan.title %></td>
-    <td><%= reading_plan.start_plan %></td>
-    <td><%= reading_plan.end_plan %></td>
-    <td><%= link_to 'Show', reading_plan %></td>
-    <td><%= link_to 'Edit', edit_reading_plan_path(reading_plan) %></td>
-    <td><%= link_to 'Destroy', reading_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= reading_plan.start_plan.strftime("%d %B %Y") %></td>
+    <td><%= reading_plan.end_plan.strftime("%d %B %Y") %></td>
+    <td>
+            <%#link_to '', edit_artifact_path(artifact), class: 'icon-pencil pull-right' %>
+      <%= link_to '', reading_plan, method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon-remove pull-right' %>
+      <%= link_to '', edit_reading_plan_path(reading_plan), class: 'icon-pencil pull-right' %>
+      <%= link_to '', reading_plan, class: 'icon-eye-open pull-right' %>
+    </td>
   </tr>
 <% end %>
 </table>
